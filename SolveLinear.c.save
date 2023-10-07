@@ -1,0 +1,43 @@
+#ifndef SOLVELINEAR_H_INCLUDED
+#define SOLVELINEAR_H_INCLUDED
+#include <math.h>
+#include <assert.h>
+
+#include "doubleCompare.h"
+#include "SolveLinear.h"
+
+enum NUMBER_OF_ROOTS
+{
+    Inf_ROOTS = -1,
+    No_ROOTS  =  0,
+    One_Root  =  1,
+};
+
+//! b [in] - first coefficient
+//! a [in] - second coefficient
+//! x1 [out] - the root
+//! return roots and number of roots
+
+int SolveLinear (double b, double c, double* x1)
+{
+    assert (x1 != NULL);
+    assert (isfinite (b));
+    assert (isfinite (c));
+
+    const int YES = 1, NO = 0;
+
+    if (IsDoubleZero(b) == YES)
+    {
+
+        return IsDoubleZero(c) ? Inf_ROOTS :
+                                  No_ROOTS;
+    }
+    else                  /* b!=0 */
+    {
+      *x1= -c/b;
+      return One_Root;    /* one root */
+    }
+}
+
+
+#endif
