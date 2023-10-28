@@ -1,4 +1,7 @@
-#include "solveSquare.h"
+#include "SolveEquation.h"
+
+int solveSquare (const double a, const double b, const double c, double* x1, double* x2);
+int SolveLinear (double b, double c, double* x1);
 
 int solveSquare (const double a, const double b, const double c, double* x1, double* x2)
 {
@@ -31,5 +34,23 @@ int solveSquare (const double a, const double b, const double c, double* x1, dou
 
         return (TWO_Roots);          /* two roots */
      }
+}
+
+int SolveLinear (double b, double c, double* x1)
+{
+    assert (x1 != NULL);
+    assert (isfinite (b));
+    assert (isfinite (c));
+
+    const int YES = 1, NO = 0;
+
+    if (IsDoubleZero(b) == YES)
+        return IsDoubleZero(c) ? Inf_ROOTS :
+                                 No_ROOTS;
+    else                    /* b!=0 */
+    {
+        *x1= -c/b;
+        return One_Root;    /* one root */
+    }
 }
 

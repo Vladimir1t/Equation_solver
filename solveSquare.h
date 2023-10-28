@@ -6,15 +6,7 @@
 #include <assert.h>
 
 #include "doubleCompare.h"
-#include "SolveLinear.h"
-
-enum nROOTS
-{
-    Inf_Roots = -1,
-    No_Roots  =  0,
-    ONE_Root  =  1,
-    TWO_Roots =  2
-};
+#include "Consts.h"
 
 //! Function solves square equation
 //! a [in] - coefficient

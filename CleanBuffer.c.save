@@ -1,20 +1,13 @@
-#ifndef CLEANBUFFER_H_INCLUDED
-#define CLEANBUFFER_H_INCLUDED
-#include <stdio.h>
 #include "CleanBuffer.h"
-
-void CleanBuffer();
 
 void CleanBuffer()
 {
-
     int symbol = 0;
-    
+
     do
     {
-      symbol = getchar();
+        symbol = getchar();
     }
-      while (symbol != '\n' && symbol != EOF);
-}
 
-#endif // CLEANBUFFER_H_INCLUDED
+    while (symbol != '\n' && symbol != EOF);
+}

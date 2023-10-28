@@ -1,8 +1,8 @@
-#ifndef PRINTROOTS_H_INCLUDED
-#define PRINTROOTS_H_INCLUDED
 #include <stdio.h>
 #include "SolveSquare.h"
 #include "PrintRoots.h"
+
+void PrintRoots (int nRoots, double* x1, double* x2);
 
 //! Function prints roots of evaluation and their number
 //! nRoots [in] number of roots
@@ -18,7 +18,7 @@ enum NumberOfRoots
     Two_ROOTs  =  2
 };
 
-void PrintRoots(int nRoots, double* x1, double* x2)
+void PrintRoots (int nRoots, double* x1, double* x2)
 {
 
     switch (nRoots)

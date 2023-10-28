@@ -10,7 +10,7 @@ void CheckInput (int* degree)
     {
         printf ("Error. Wrong choice\n");
         ModNumber = scanf ("%d", degree);
-    
+
         CleanBuffer ();
     }
 

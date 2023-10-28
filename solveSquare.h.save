@@ -1,24 +1,14 @@
 #ifndef ISSOLVESQUARE_H_INCLUDED
 #define ISSOLVESQUARE_H_INCLUDED
+
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
 
-#include "IsDoubleZero.h"
-#include "SolveLinear.h"
-//#include "solveSquare.h"
+#include "doubleCompare.h"
+#include "Consts.h"
 
-enum nROOTS
-{
-    Inf_Roots = -1,
-    No_Roots  =  0,
-    ONE_Root  =  1,
-    TWO_Roots =  2
-};
-
-int solveSquare (const double a,const double b,const double c, double* x1, double* x2);
-
-//! Function solves square evaluation
+//! Function solves square equation
 //! a [in] - coefficient
 //! b [in] - coefficient
 //! c [in] - coefficient
@@ -27,44 +17,6 @@ int solveSquare (const double a,const double b,const double c, double* x1, doubl
 //! x2 [out] - the second root
 //! return roots and number of roots
 
-int solveSquare (const double a,const double b,const double c, double* x1, double* x2)
-{
+int solveSquare (const double a,const double b,const double c, double* x1, double* x2);
 
-    assert (x1 != NULL);
-    assert (x2 != NULL);
-    assert (x1 != x2);
-
-    assert (isfinite (a));
-    assert (isfinite (b));
-    assert (isfinite (c));
-
-    const int YES = 1, NO = 0;
-
-    if (IsDoubleZero(a) == YES)
-    {
-      return SolveLinear(b, c, x1);
-    }
-
-    else                           /* (if a != 0) */
-    {
-      double d = b*b-4*a*c;        /* discriminant */
-
-      if (IsDoubleZero(d) == YES)  /* one root */
-      {
-        *x1 = -b/(2*a);
-        return (ONE_Root);
-       }
-      else if (d < 0)              /* no roots */
-      {
-        return (No_Roots);
-      }
-        double sqrtD = sqrt(d);
-        *x1 = (-b+sqrtD)/(2*a);
-        *x2 = (-b-sqrtD)/(2*a);
-
-        return (TWO_Roots);        /* two roots */
-     }
-}
-
-#endif
-
+#endif // SOLVESQUARE_H_INCLUDED
