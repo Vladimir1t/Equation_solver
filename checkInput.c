@@ -4,9 +4,9 @@ void CheckInput (int* degree)
 {
     assert (degree != NULL);
 
-    while(*degree != Degree_1 ||
-          *degree != Degree_2 ||
-          *degree != Test ));
+    while(*degree != DEGREE_1 ||
+          *degree != DEDREE_2 ||
+          *degree != TEST));
     {
         printf ("Error. Wrong choice\n");
         ModNumber = scanf ("%d", degree);

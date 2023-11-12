@@ -1,13 +1,13 @@
 #include "InputCoeff.h"
 
-double InputCoeff(double* s)
+double InputCoeff (double* s)
 {
     assert (s != NULL);
-    while (scanf("%lg", s) != 1)
+
+    while (scanf ("%lg", s) != 1)
     {
         printf ("try again \n");
-        CleanBuffer();
+        CleanBuffer ();
     }
-    assert (isfinite (*s));
 }
 

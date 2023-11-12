@@ -4,21 +4,13 @@
 
 #include "InputCoeff.h"
 #include "PrintInstructions.h"
-#include "solveSquare.h"
+#include "SolveSquare.h"
 #include "Test.h"
 #include "SolveLinear.h"
 #include "PrintRoots.h"
 #include "CleanBuffer.h"
 #include "CheckInput.h"
-
-enum Mod
-{
-    TEST         =  0,
-    DEGREE_1     =  1,
-    DEGREE_2     =  2,
-    ERROR        =  3,
-    NOT_SELECTED = -1,
-};
+#include "nRoots.h"
 
 //! Program solves quadratic or linear equation according to user's choice
 //! a [in] the first coefficient of quadratic equation
@@ -31,7 +23,7 @@ enum Mod
 //! x2 [out] the second root of the evaluation
 //! return roots and their number
 
-int main()                               /// -t: test, -l: linear, -s: square
+int main()
 {
     PrintInstructions();                 /* print requirements and instructions */
 
@@ -81,7 +73,7 @@ int main()                               /// -t: test, -l: linear, -s: square
             printf("Error. Wrong choice\n");                 /* Error */
     }
 
-    PrintRoots (nRoots, &x1, &x2);                         /* Return roots */
+    PrintRoots (nRoots, &x1, &x2);                           /* Return roots */
 
     return 0;
 }

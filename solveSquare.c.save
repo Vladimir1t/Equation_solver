@@ -20,19 +20,19 @@ int solveSquare (const double a, const double b, const double c, double* x1, dou
     {
         double d = b*b-4*a*c;        /* discriminant */
 
-        if (IsDoubleZero(d))         /* one root */
+        if (IsDoubleZero(d))        
         {
             *x1 = -b/(2*a);
             return (ONE_Root);
         }
-        else if (d < 0)              /* no roots */
+        else if (d < 0)              
             return (No_Roots);
 
         double sqrtD = sqrt(d);
         *x1 = (-b+sqrtD)/(2*a);
         *x2 = (-b-sqrtD)/(2*a);
 
-        return (TWO_Roots);          /* two roots */
+        return (TWO_Roots);          
      }
 }
 
@@ -47,10 +47,10 @@ int SolveLinear (double b, double c, double* x1)
     if (IsDoubleZero(b) == YES)
         return IsDoubleZero(c) ? Inf_ROOTS :
                                  No_ROOTS;
-    else                    /* b!=0 */
+    else                             /* b!=0 */
     {
         *x1= -c/b;
-        return One_Root;    /* one root */
+        return One_Root;            
     }
 }
 

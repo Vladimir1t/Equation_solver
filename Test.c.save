@@ -43,32 +43,31 @@ int TestOne (struct TestData* dataRef, const size_t Number)
 
         printf ("Error in test number %d \n", Number + 1 );
 
-        return 0;    /* Test failed */
+        return 0;                           /* Test failed */
     }
-
-    return 1;        /* Test is OK */
+    return 1;                               /* Test is OK */
 }
 
-int TestFile()       /* this function takes data from .txt file */
+int TestFile()                              /* this function takes data from .txt file */
 {
     size_t SizeF = 0;
     size_t nRightFileTests = 0;
     double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
     int nRoots = 0;
 
-    FILE *file = fopen ("TEST.txt", "r");   /* apply to data in file */
+    FILE* fileP = fopen ("TEST.txt", "r");   /* apply to data in file */
 
     do
     {
-        printf("write the number of structures:\n");
+        printf ("write the number of structures:\n");
     }
     while (scanf ("%d", &SizeF) != 1);
 
-    TestData* dataPointer = (TestData*) calloc(SizeF, sizeof (TestData[0]));  ///
+    TestData* dataPointer = (TestData*) calloc(SizeF, sizeof(TestData[0]));
 
     for (size_t i = 0; i < SizeF; i++)
     {
-        fscanf(file, "%lg %lg %lg %lg %lg %d", &dataPointer[i].a, &dataPointer[i].b,
+        fscanf (file, "%lg %lg %lg %lg %lg %d", &dataPointer[i].a, &dataPointer[i].b,
         &dataPointer[i].c, &dataPointer[i].x1, &dataPointer[i].x2, &dataPointer[i].nRoots);
     }
 
@@ -77,6 +76,9 @@ int TestFile()       /* this function takes data from .txt file */
         nRightFileTests += TestOne(dataPointer[i], i);
     }
     printf ("Number of failed tests: %d\n", Size - nRightFileTests);
+
+    fclose (fileP);
+    free (dataPointer);
 
     return (nRightFileTests == Size);
 }

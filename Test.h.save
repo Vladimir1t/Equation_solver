@@ -5,7 +5,7 @@
 #include "doubleCompare.h"
 #include "solveSquare.h"
 
-enum nRoots
+enum nRoots      // 
 {
     INF_ROOTS = -1,
     NO_ROOTS  =  0,

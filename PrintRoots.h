@@ -2,8 +2,9 @@
 #define PRINTROOTS_H_INCLUDED
 
 #include <stdio.h>
+
 #include "SolveSquare.h"
-#include "Consts.h"
+#include "nRoots.h"
 
 //! Function prints roots of evaluation and their number
 //! nRoots [in] number of roots

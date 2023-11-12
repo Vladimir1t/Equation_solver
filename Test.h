@@ -2,16 +2,11 @@
 #define TEST_H_INCLUDED
 
 #include <stdio.h>
-#include "doubleCompare.h"
-#include "solveSquare.h"
+#include <stdlib.h>
 
-enum nRoots
-{
-    INF_ROOTS = -1,
-    NO_ROOTS  =  0,
-    ONE_ROOT  =  1,
-    TWO_ROOTS =  2,
-};
+#include "DoubleCompare.h"
+#include "SolveSquare.h"
+#include "nRoots.h"
 
 struct TestData
 {
@@ -21,6 +16,7 @@ struct TestData
 };
 
 int TestOne (const struct TestData* data, const size_t i);
+
 int TestFile ();
 
 //! Function includes the array of the reference roots and coefficients

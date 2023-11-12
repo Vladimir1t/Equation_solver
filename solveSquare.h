@@ -5,8 +5,8 @@
 #include <math.h>
 #include <assert.h>
 
-#include "doubleCompare.h"
-#include "Consts.h"
+#include "DoubleCompare.h"
+#include "nRoots.h"
 
 //! Function solves square equation
 //! a [in] - coefficient

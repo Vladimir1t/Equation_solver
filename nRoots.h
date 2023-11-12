@@ -9,4 +9,12 @@ enum NumberOfRoots
     TWO_ROOTS  =  2
 };
 
+enum Mod
+{
+    TEST         =  0,
+    DEGREE_1     =  1,
+    DEGREE_2     =  2,
+    ERROR        =  3,
+    NOT_SELECTED = -1,
+};
 #endif // CONSTS_H_INCLUDED

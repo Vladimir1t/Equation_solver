@@ -9,8 +9,9 @@
 #include "SolveLinear.h"
 #include "PrintRoots.h"
 #include "CleanBuffer.h"
+#include "CheckInput.h"
 
-enum Mod
+enum Modo
 {
     TEST         =  0,
     DEGREE_1     =  1,
@@ -30,22 +31,17 @@ enum Mod
 //! x2 [out] the second root of the evaluation
 //! return roots and their number
 
-int main()                               /// -t: test, -l: linear, -s: square
+int main()                               
 {
     PrintInstructions();                 /* print requirements and instructions */
 
     double a = 0,b = 0, c = 0;           /* coefficients of square equation */
     double x1 = 0, x2 = 0;               /* Roots */
     int nRoots = ERROR;                  /* number of roots */
-    Mod degree = NOT_SELECTED;           /* number of choice */
+    int degree = NOT_SELECTED;           /* number of choice */
 
-   // CheckInput (&degree);
-    while (scanf ("%d", &degree) != 1)
-    {
-        printf ("Error. Wrong choice\n");
-        CleanBuffer ();
-    }
-    CleanBuffer ();
+    CheckInput (&degree);
+
     switch (degree)
     {
         case DEGREE_1:
@@ -54,7 +50,7 @@ int main()                               /// -t: test, -l: linear, -s: square
 
             InputCoeff (&b);
             InputCoeff (&c);
-        
+
             nRoots = SolveLinear (b, c, &x1);
             break;
 
@@ -85,7 +81,7 @@ int main()                               /// -t: test, -l: linear, -s: square
             printf("Error. Wrong choice\n");                 /* Error */
     }
 
-    PrintRoots (nRoots, &x1, &x2);                         /* Return roots */
+    PrintRoots (nRoots, &x1, &x2);                           /* Return roots */
 
     return 0;
 }

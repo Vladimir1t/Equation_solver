@@ -8,6 +8,5 @@ void CleanBuffer()
     {
         symbol = getchar();
     }
-
     while (symbol != '\n' && symbol != EOF);
 }

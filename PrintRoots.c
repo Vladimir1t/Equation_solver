@@ -18,6 +18,7 @@ void PrintRoots (int nRoots, double* x1, double* x2)
           break;
       default:
           printf ("error, program didn't complete\n");
+          break;
     }
 }
 
