@@ -1,6 +1,0 @@
-#ifndef DOUBLECOMPARE_H_INCLUDED
-#define DOUBLECOMPARE_H_INCLUDED
-
-int DoubleCompare(double x, double y);
-
-#endif // DOUBLECOMPARE_H_INCLUDED
